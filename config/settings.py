@@ -1,10 +1,14 @@
 import os
 from datetime import timedelta
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -159,12 +163,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # settings.py ichiga
 
@@ -179,16 +183,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rizonwebappapi$rizonwebapp3api',
-        'USER': 'rizonwebappapi',
-        'PASSWORD': '47*(7÷•¢\÷|7)*5*8*7Done7858',
-        'HOST':'rizonwebappapi.mysql.pythonanywhere-services.com',
-        'PORT':'3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'rizonwebappapi$rizonwebapp3api',
+#         'USER': 'rizonwebappapi',
+#         'PASSWORD': '47*(7÷•¢\÷|7)*5*8*7Done7858',
+#         'HOST':'rizonwebappapi.mysql.pythonanywhere-services.com',
+#         'PORT':'3306',
+#     }
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
