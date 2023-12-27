@@ -99,8 +99,8 @@ REST_FRAMEWORK = {
 		'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
-ACCOUNT_SID_SMS = 'ACf2954ab43c1168c105db6c558390aa44'
-AUTH_TOKEN_SMS = '6897a268c5d23b95f848e0ef78fda8c5'
+ACCOUNT_SID_SMS = env('SID_SMS')
+AUTH_TOKEN_SMS = env("TOKEN_SMS")
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=2),
