@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Shajara Ma'lumotlari jadvali</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ism</th>
+                <th>Familiya</th>
+                <th>Tel.</th>
+                <th>Shaxsiy</th>
+                <th>Jamoaviy</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+    </table>
+            {% for user_tree in data.tree %}
+     <h3>{{forloop.counter}}-shajara</h3>
+    <table>
+        <tbody>
+        {% for user in user_tree %}
+            <tr>
+                <td><a href="/api/user-tree-view/{{user.user_id}}/month/{{data.month}}/">{{user.first_name}}</a></td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.phone_number}}</td>
+                <td>{{user.user_score}}</td>
+                <td>{{user.user_tree_score}}</td>
+                <td>{{user.user_status}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        {% endfor %}
+
+</body>
+</html>

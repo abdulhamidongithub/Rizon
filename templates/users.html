@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Foydalanuvchilar ro'yxati</title>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Google Font: Source Sans Pro -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+      <!-- Font Awesome Icons -->
+      <!-- IonIcons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+
+		.container {
+			margin-top: 50px;
+		}
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <div class="col-md-12">
+        <h2 class="text-center mb-5 container">Foydalanuvchilar ro'yxati</h2>
+        <div class="card card-dark">
+            <div class="card-header border-0">
+            </div>
+
+    <div class="card-body">
+
+                <table class="table" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 15px">T/r</th>
+                            <th scope="col" style="text-align: center;">ID</th>
+                            <th scope="col" style="text-align: center;">Familiya</th>
+                            <th scope="col" style="text-align: center;">Ism</th>
+                            <th scope="col" style="text-align: center;">Passport</th>
+                            <th scope="col" style="text-align: center;">Telefon raqam 1</th>
+                            <th scope="col" style="text-align: center;">Telefon raqam 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+				        <tr>
+						    <th>{{forloop.counter}}</th>
+                            <th>{{user.user_id}}</th>
+                            <th>{{user.last_name}}</th>
+                            <th>{{user.first_name}}</th>
+    						<th>{{user.passport}}</th>
+                            <th>{{user.phoneNum}}</th>
+                            <th>{{user.phoneNumTwo}}</th>
+				        </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+  </body>
+</html>
